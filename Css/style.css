@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --accent-color: rgb(255, 179, 66);
+    --background-color: rgb(255, 255, 255);
+    --error-color: rgb(255, 66, 66);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 90%;
+}
+
+input:focus{
+    /* outline: solid 2px var(--accent-color); */
+    border: solid 1px var(--accent-color) !important;
+    outline: none;
+}
+
+/*------------- Contact view -------------*/
+#contacts{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    border: solid rgb(68, 255, 0) 1px;
+}
+
+#contact_column1{
+    width: 25%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.138);
+}
+
+#btn_addContact{
+    width: 80%;
+    height: 60px;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    background-color: var(--background-color);
+    border: solid 1px var(--accent-color);
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+#btn_addContact:hover{
+    transform: scale(1.1);
+    color: var(--background-color);
+    background-color: var(--accent-color);
+}
+
+
+
+#contact_grid{
+    width: 67%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    min-height: 0;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+}
+
+.contact_card{
+    width: 80%;
+    height: 60px;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: var(--background-color);
+    border: none;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+    color: var(--accent-color);
+    transition: all 0.1s;
+    cursor: pointer;
+}
+.contact_card>span{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.contact_card:hover{
+    transform: scale(1.05);
+    color: var(--background-color);
+    background-color: var(--accent-color);
+}
+
+/*------------- Create contact view -------------*/
+
+#create{
+    display: none;
+}
+
+#create_card{
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+}
+
+#btn_create_contact{
+    margin-top: 20px;
+    width: 90%;
+    height: 50px;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    background-color: var(--background-color);
+    border: solid 1px var(--accent-color);
+    transition: all 0.1s;
+}
+
+#btn_create_contact:hover{
+    transform: scale(1.05);
+    color: var(--background-color);
+    background-color: var(--accent-color);
+}
+
+
+#create_contact_fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    width: 90%;
+    height: 80%;
+}
+
+#create_contact_fields>div{
+    width: 90%;
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: solid 1px red; */
+}
+
+#create_contact_fields>div>input{
+    width: 65%;
+    color: black;
+    background-color: var(--background-color);
+    border: solid 1px black;
+    border-radius: 0;
+}
+#create_contact_fields>div>input:focus{
+    outline: none;
+    border: solid 1.5px var(--accent-color);
+}
+
+#create_contact_name{
+    height: 30px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+}
+
+#create_contact_email{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#create_contact_email>h3{
+    align-self: flex-start;
+    margin-left: 5%;
+    text-align: left;
+}
+
+#create_contact_tel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#create_contact_tel>h3{
+    align-self: flex-start;
+    margin-left: 5%;
+    text-align: left;
+}
+
+/*------------- Modify contact view -------------*/
+
+#modify{
+    display: flex;
+}
+
+#modify_card{
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+}
+
+#btn_modify_contact{
+    margin-top: 20px;
+    width: 90%;
+    height: 50px;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    background-color: var(--background-color);
+    border: solid 1px var(--accent-color);
+    transition: all 0.1s;
+}
+
+#btn_modify_contact:hover{
+    transform: scale(1.05);
+    color: var(--background-color);
+    background-color: var(--accent-color);
+}
+
+#modify_contact_fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    width: 90%;
+    height: 80%;
+}
+
+#modify_contact_fields>div{
+    width: 90%;
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: solid 1px red; */
+}
+
+#modify_contact_fields>div>input{
+    width: 65%;
+    color: black;
+    background-color: var(--background-color);
+    border: solid 1px black;
+    border-radius: 0;
+}
+#modify_contact_fields>div>input:focus{
+    outline: none;
+    border: solid 1.5px var(--accent-color);
+}
+
+#modify_contact_name{
+    height: 30px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+}
+
+#modify_contact_email{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#modify_contact_email>h3{
+    align-self: flex-start;
+    margin-left: 5%;
+    text-align: left;
+}
+
+#modify_contact_tel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#modify_contact_tel>h3{
+    align-self: flex-start;
+    margin-left: 5%;
+    text-align: left;
+}
+
+
+/*------------- Email field -------------*/
+.email_field{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emails_container{
+    padding-top: 10px;
+    height: 150px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    border: solid 1.5px black;
+}
+.emails_container>div{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.emails_container>div>input{
+    width: 85%;
+    height: 20px;
+    margin: 5px;
+    border: solid 1px black;
+}
+.emails_container>div>button{
+    width: 10%;
+    height: 23px;
+    margin: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: var(--background-color);
+    border: solid 1px var(--error-color);
+    color: var(--error-color);
+    transition: all 0.1s;
+}
+.emails_container>div>button:hover{
+    transform: scale(1.1);
+    background-color: var(--error-color);
+    color: var(--background-color);
+}
+.email_add_container{
+    height: 35px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.email_add_container>input{
+    width: 80%;
+    height: 24px;
+    border: solid 1px black;
+}
+.email_add_container>button{
+    width: 15%;
+    height: 26px;
+    margin: 5px;
+    text-align: center;
+    background-color: var(--background-color);
+    border: solid 1px var(--accent-color);
+    color: var(--accent-color);
+    transition: all 0.1s;
+}
+.email_add_container>button:hover:enabled{
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+    color: var(--background-color);
+}
+
+
+
+
+/*------------- Tel field -------------*/
+.tel_field{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tel_container{
+    height: 150px;
+    width: 90%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    border: solid 1.5px black;
+}
+.tel_container>div{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tel_container>div>input{
+    width: 85%;
+    height: 20px;
+    margin: 5px;
+    border: solid 1px black;
+}
+.tel_container>div>button{
+    width: 10%;
+    height: 23px;
+    margin: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: var(--background-color);
+    border: solid 1px var(--error-color);
+    color: var(--error-color);
+    transition: all 0.1s;
+}
+.tel_container>div>button:hover{
+    transform: scale(1.1);
+    background-color: var(--error-color);
+    color: var(--background-color);
+}
+.tel_add_container{
+    height: 35px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.tel_add_container>input{
+    width: 80%;
+    height: 24px;
+    border: solid 1px black;
+}
+.tel_add_container>button{
+    width: 15%;
+    height: 26px;
+    margin: 5px;
+    text-align: center;
+    background-color: var(--background-color);
+    border: solid 1px var(--accent-color);
+    color: var(--accent-color);
+    transition: all 0.1s;
+}
+.tel_add_container>button:hover:enabled{
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+    color: var(--background-color);
+}
