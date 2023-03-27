@@ -1,5 +1,0 @@
-class ContactProcessor{
-    static createContact(){
-        
-    }
-}

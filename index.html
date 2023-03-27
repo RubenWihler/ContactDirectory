@@ -8,6 +8,7 @@
     <title>Annuaire de contacts</title>
 </head>
 <body>
+    <script src="./Js/libphonenumber-max-1.10.19.js"></script>
     <div class="view" id="contacts">
         <div id="contact_column1">
             <h2>Contacts :</h2>
@@ -30,28 +31,12 @@
                 <div id="create_contact_email">
                     <h3>Email :</h3>
                     <div class="email_field">
-                        <div class="emails_container">
-                            <div>
-                                <input type="email" name="email" value="Email 1">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="email" name="email" value="Email 1">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="email" name="email" value="Email 1">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="email" name="email" value="Email 1">
-                                <button>-</button>
-                            </div>
+                        <div class="emails_container" id="create_contact_email_container">
                             
                         </div>
                         <div class="email_add_container">
-                            <input type="email" name="email" value="">
-                            <button>Ajouter</button>
+                            <input type="email" name="email" id="create_email_input" value="" placeholder="email@email.com">
+                            <button id="create_email_btn">Ajouter</button>
                         </div>
                     </div>
                 </div>
@@ -59,49 +44,21 @@
                 <div id="create_contact_tel">
                     <h3>Tel :</h3>
                     <div class="tel_field">
-                        <div class="tel_container">
-                            <div>
-                                <input type="tel" name="tel">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
+                        <div class="tel_container" id="create_contact_tel_container">
+                            
                         </div>
                         <div class="tel_add_container">
-                            <input type="tel" name="tel" value="">
-                            <button>Ajouter</button>
+                            <input type="tel" name="tel" value="" placeholder="+41000000000" id="create_tel_input">
+                            <button id="create_tel_btn">Ajouter</button>
                         </div>
                     </div>
                 </div>
 
             </div>
+            <div id="errors_container_create" class="errors_container">
+            </div>
             <button id="btn_create_contact">Créer</button>
+            <button id="btn_create_back">retour</button>
         </div>
     </div>
     <div class="view" id="modify">
@@ -115,27 +72,10 @@
                 <div id="modify_contact_email">
                     <h3>Email :</h3>
                     <div class="email_field">
-                        <div class="emails_container">
-                            <div>
-                                <input type="email" name="email" value="Email 1">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="email" name="email" value="Email 1">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="email" name="email" value="Email 1">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="email" name="email" value="Email 1">
-                                <button>-</button>
-                            </div>
-                            
+                        <div class="emails_container" id="modify_emails_container">
                         </div>
                         <div class="email_add_container">
-                            <input type="email" name="email" value="">
+                            <input type="email" name="email" value="" placeholder="email@email.com">
                             <button>Ajouter</button>
                         </div>
                     </div>
@@ -144,50 +84,43 @@
                 <div id="modify_contact_tel">
                     <h3>Tel :</h3>
                     <div class="tel_field">
-                        <div class="tel_container">
-                            <div>
-                                <input type="tel" name="tel">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
-                            <div>
-                                <input type="tel" name="tel" value="">
-                                <button>-</button>
-                            </div>
+                        <div class="tel_container" id="modify_tel_container">
                         </div>
                         <div class="tel_add_container">
-                            <input type="tel" name="tel" value="">
+                            <input type="tel" name="tel" value="" placeholder="+41000000000">
                             <button>Ajouter</button>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <button id="btn_modify_contact">Modifier</button>
+            <div id="errors_container_modify" class="errors_container">
+                <!--<span>Le nom est deja utiliser</span>!-->
+            </div>
+            <button id="btn_delete_contact">Supprimer le contact</button>
+            <button id="btn_modify_contact">Modifier le contact</button>
+            <button id="btn_modify_back">retour</button>
         </div>
     </div>
+
+    <script src="./Js/email.js"></script>
+    
+    <script src="./Js/SaveSystem/save_data.js"></script>
+    <script src="./Js/SaveSystem/save_system.js"></script>
+
+    <script src="./Js/Contact/contact.js"></script>
+    <script src="./Js/Contact/contact_processor.js"></script>
+    
+    <script src="./Js/View/view.js"></script>
+    <script src="./Js/UiElements/contact_element.js"></script>
+    <script src="./Js/View/view_manager.js"></script>
+
+    <script src="./Js/UiElements/field.js"></script>
+    <script src="./Js/UiElements/email_field.js"></script>
+    <script src="./Js/UiElements/tel_field.js"></script>
+    
+    
+    
+    <script src="./Js/script.js"></script>
 </body>
 </html>
