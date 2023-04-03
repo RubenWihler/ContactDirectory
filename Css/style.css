@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 :root{
-    --accent-color: rgb(255, 179, 66);
+    --accent-color: rgb(60, 46, 255);
     --background-color: rgb(255, 255, 255);
     --error-color: rgb(255, 66, 66);
+
+    --card-border-radius: 20px;
 }
 
 body{
@@ -35,26 +37,33 @@ input:focus{
 /*------------- Contact view -------------*/
 #contacts{
     display: none;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    height: 90vh;
     padding-left: 10%;
     padding-right: 10%;
+    margin-bottom: 10vh;
     /*border: solid rgb(68, 255, 0) 1px;*/
 }
 
 #contact_column1{
-    width: 25%;
-    height: 80%;
+    width: 60%;
+    height: 10%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
     align-items: center;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.138);
+    /*border-radius: 30px;*/
 }
 
 #btn_addContact{
-    width: 80%;
-    height: 60px;
+    width: 20%;
+    height: 50%;
+    min-width: 200px;
     font-size: 1.2rem;
     color: var(--accent-color);
     background-color: var(--background-color);
@@ -69,10 +78,8 @@ input:focus{
     background-color: var(--accent-color);
 }
 
-
-
 #contact_grid{
-    width: 67%;
+    width: 80%;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -81,6 +88,10 @@ input:focus{
     overflow-y: auto;
     min-height: 0;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+    /*border-radius: 30px;*/
+}
+.contact_card:first-child{
+    margin-top: 50px;
 }
 
 .contact_card{
@@ -119,11 +130,13 @@ input:focus{
 
 #create_card{
     max-width: 800px;
+    padding-top: 1%;
+    padding-bottom: 1.5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
-    height: 80%;
+    height: 82.5%;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
 }
 
@@ -176,6 +189,8 @@ input:focus{
 #create_contact_fields>div{
     width: 90%;
     margin: 5%;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -230,6 +245,8 @@ input:focus{
 
 #modify_card{
     max-width: 800px;
+    padding-top: 1%;
+    padding-bottom: 1.5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -285,10 +302,12 @@ input:focus{
 #modify_contact_fields>div{
     width: 90%;
     margin: 5%;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* border: solid 1px red; */
+    /*border: solid 1px red;*/
 }
 
 #modify_contact_fields>div>input{
@@ -352,7 +371,7 @@ input:focus{
 /*------------- Email field -------------*/
 .email_field{
     width: 100%;
-    height: 200px;
+    height: 175px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -361,6 +380,7 @@ input:focus{
 
 .emails_container{
     padding-top: 10px;
+    margin-bottom: 5px;
     height: 150px;
     width: 90%;
     display: flex;
@@ -382,6 +402,8 @@ input:focus{
     border: solid 1px black;
 }
 .emails_container>div>button{
+    display: flex;
+    justify-content: center;
     width: 10%;
     height: 23px;
     margin: 5px;
@@ -398,6 +420,10 @@ input:focus{
     background-color: var(--error-color);
     color: var(--background-color);
 }
+.emails_container>div>button>i{
+    align-self: center;
+}
+
 .email_add_container{
     height: 35px;
     width: 90%;
@@ -414,7 +440,7 @@ input:focus{
 .email_add_container>button{
     width: 15%;
     height: 26px;
-    margin: 5px;
+    margin-left: 5px;
     text-align: center;
     background-color: var(--background-color);
     border: solid 1px var(--accent-color);
@@ -433,7 +459,7 @@ input:focus{
 /*------------- Tel field -------------*/
 .tel_field{
     width: 100%;
-    height: 200px;
+    height: 175px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -442,6 +468,7 @@ input:focus{
 
 .tel_container{
     height: 150px;
+    margin-bottom: 5px;
     width: 90%;
     padding-top: 10px;
     display: flex;
@@ -463,6 +490,8 @@ input:focus{
     border: solid 1px black;
 }
 .tel_container>div>button{
+    display: flex;
+    justify-content: center;
     width: 10%;
     height: 23px;
     margin: 5px;
@@ -478,6 +507,9 @@ input:focus{
     transform: scale(1.1);
     background-color: var(--error-color);
     color: var(--background-color);
+}
+.tel_container>div>button>i{
+    align-self: center;
 }
 .tel_add_container{
     height: 35px;
@@ -495,7 +527,6 @@ input:focus{
 .tel_add_container>button{
     width: 15%;
     height: 26px;
-    margin: 5px;
     text-align: center;
     background-color: var(--background-color);
     border: solid 1px var(--accent-color);

@@ -69,12 +69,12 @@ class SaveSystem {
         SaveSystem.#loadedNameMap = nameMap;
         SaveSystem.#loadedEmailMap = emailMap;
         SaveSystem.#loadedPhoneMap = phoneMap;
-        console.log('contact data pulled from localstorage');
+        // console.log('contact data pulled from localstorage');
     }
     static pushDatas(){
         let json_data = JSON.stringify(SaveSystem.loadedDatas);
         localStorage.setItem('contacts', json_data);
-        console.log('contact data pushed to localstorage');
+        // console.log('contact data pushed to localstorage');
         SaveSystem.pullDatas();
     }
 }
