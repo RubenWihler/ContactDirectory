@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 :root{
-    --accent-color: rgb(60, 46, 255);
+    --accent-color: rgb(82, 43, 255);
     --background-color: rgb(255, 255, 255);
-    --error-color: rgb(255, 66, 66);
+    --error-color: rgb(255, 82, 66);
 
     --card-border-radius: 20px;
 }

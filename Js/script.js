@@ -52,9 +52,6 @@ function fillContacts(){
     });
 }
 
-function sortContact(a, b){
-    return a.name.localeCompare(b.name);
-}
 /**
  * Appelée quand un ContactElement est cliqué
  * @param contactElement {ContactElement}

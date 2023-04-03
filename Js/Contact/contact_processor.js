@@ -60,7 +60,7 @@ class ContactProcessor{
         }
 
         let new_set = new Set(SaveSystem.loadedDatas.contacts);
-        new_set.delete(SaveSystem.loadedDatas.contacts.at(SaveSystem.nameMap.get(contactName)));
+        new_set.delete(SaveSystem.loadedDatas.contacts.at(SaveSystem.nameMap.get(contactName.toLowerCase())));
         SaveSystem.loadedDatas.contacts = Array.from(new_set);
         SaveSystem.pushDatas();
         return true;
